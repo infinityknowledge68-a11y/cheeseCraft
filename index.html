@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order premium cheese-loaded meals with fast delivery.">
+    <title>CheeseCraft | House of Cheesy Delights</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CheeseCraft</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#" id="cartBtn">Cart <span id="cartCount">(0)</span></a>
+            <a href="signin.html" class="btn-signin">Sign In</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Delicious Cheesy Food Made Fresh for You</h1>
+        <p>Order premium cheese-loaded meals with fast delivery and rich flavors.</p>
+        <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="window.location.href='#menu'">Order Now</button>
+            <button class="btn btn-secondary" onclick="window.location.href='signin.html'">Sign In</button>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span class="close-cart">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Cart items will be injected here -->
+            <p style="padding:1rem; opacity:0.7;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalValue">PKR 0</span>
+            </div>
+            <button id="checkoutBtn" class="btn btn-primary" style="width:100%">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2>Our Cheesy Menu</h2>
+        <div class="menu-grid">
+            <!-- Item 1: Pizza -->
+            <div class="food-card">
+                <img src="images/cheese-pizza.png" alt="Cheese Burst Pizza">
+                <div class="card-content">
+                    <h3>Cheese Burst Pizza</h3>
+                    <p>Classic pizza loaded with extra mozzarella and cheddar crust.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 1200</span>
+                        <button class="btn-order" data-item="Cheese Burst Pizza" data-price="1200">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Burger -->
+            <div class="food-card">
+                <img src="images/cheesy-burger.png" alt="Cheesy Zinger Burger">
+                <div class="card-content">
+                    <h3>Cheesy Zinger Burger</h3>
+                    <p>Crispy chicken fillet topped with melting cheese sauce.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 650</span>
+                        <button class="btn-order" data-item="Cheesy Zinger Burger" data-price="650">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: Loaded Fries -->
+            <div class="food-card">
+                <img src="images/loaded-fries.png" alt="Loaded Cheese Fries">
+                <div class="card-content">
+                    <h3>Loaded Cheese Fries</h3>
+                    <p>Golden fries topped with jalapenos, meat, and cheese flood.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 500</span>
+                        <button class="btn-order" data-item="Loaded Cheese Fries" data-price="500">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4: Mac & Cheese -->
+            <div class="food-card">
+                <img src="images/mac-n-cheese.png" alt="Mac & Cheese Bowl">
+                <div class="card-content">
+                    <h3>Mac & Cheese Bowl</h3>
+                    <p>Creamy, comforting classic mac & cheese with golden crust.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 750</span>
+                        <button class="btn-order" data-item="Mac & Cheese Bowl" data-price="750">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5: Sandwich -->
+            <div class="food-card">
+                <img src="images/cheese-sandwich.png" alt="Cheese Stuffed Sandwich">
+                <div class="card-content">
+                    <h3>Cheese Stuffed Sandwich</h3>
+                    <p>Grilled sandwich stuffed with premium cheese blend.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 450</span>
+                        <button class="btn-order" data-item="Cheese Stuffed Sandwich" data-price="450">Order
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6: Garlic Bread -->
+            <div class="food-card">
+                <img src="images/garlic-bread.png" alt="Cheesy Garlic Bread">
+                <div class="card-content">
+                    <h3>Cheesy Garlic Bread</h3>
+                    <p>Crunchy garlic bread sticks topped with mozzarella.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 350</span>
+                        <button class="btn-order" data-item="Cheesy Garlic Bread" data-price="350">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 7: Pasta -->
+            <div class="food-card">
+                <img src="images/cheese-pasta.png" alt="Cheese Pasta Alfredo">
+                <div class="card-content">
+                    <h3>Cheese Pasta Alfredo</h3>
+                    <p>Fettuccine pasta in rich cheesy white Alfredo sauce.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 900</span>
+                        <button class="btn-order" data-item="Cheese Pasta Alfredo" data-price="900">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 8: Nachos -->
+            <div class="food-card">
+                <img src="images/cheese-nachos.png" alt="Cheese Nachos Supreme">
+                <div class="card-content">
+                    <h3>Cheese Nachos Supreme</h3>
+                    <p>Crispy nachos with salsa, sour cream, and cheese dip.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 600</span>
+                        <button class="btn-order" data-item="Cheese Nachos Supreme" data-price="600">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 9: Omelette -->
+            <div class="food-card">
+                <img src="images/cheese-omelette.png" alt="Cheese Omelette Special">
+                <div class="card-content">
+                    <h3>Cheese Omelette Special</h3>
+                    <p>Fluffy omelette folded with double cheddar cheese.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 400</span>
+                        <button class="btn-order" data-item="Cheese Omelette Special" data-price="400">Order
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 10: Paratha Roll -->
+            <div class="food-card">
+                <img src="images/paratha-roll.png" alt="Cheese Lava Paratha Roll">
+                <div class="card-content">
+                    <h3>Cheese Lava Paratha Roll</h3>
+                    <p>Desi paratha roll filled with spice and oozing cheese.</p>
+                    <div class="price-row">
+                        <span class="price">PKR 550</span>
+                        <button class="btn-order" data-item="Cheese Lava Paratha Roll" data-price="550">Order
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>CheeseCraft</h3>
+            <p>Spreading cheesy happiness one meal at a time.</p>
+            <div class="social-links">
+                <span><i class="fab fa-facebook-f"></i></span>
+                <span><i class="fab fa-instagram"></i></span>
+                <span><i class="fab fa-twitter"></i></span>
+            </div>
+            <p>&copy; 2024 CheeseCraft. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Button -->
+    <div class="chatbot-btn" id="chatbotBtn">
+        <i class="fas fa-comment-dots"></i> Chat with Us
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div class="chat-modal" id="chatModal">
+        <div class="chat-header">
+            <span>CheeseBot</span>
+            <span id="closeChat" style="cursor:pointer;">&times;</span>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <p style="color:#666; font-size:0.9rem;">Hello! How can I help you today?</p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type a message...">
+            <button class="chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Place Your Order</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label>Selected Item</label>
+                    <input type="text" id="orderItem" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="orderName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="orderPhone" required placeholder="+92 300 1234567">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="orderEmail" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Delivery Address</label>
+                    <textarea id="orderAddress" required rows="2" placeholder="Street 1, House 2, City"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" id="orderQty" value="1" min="1" required>
+                </div>
+                <button type="submit" class="btn btn-submit">Confirm Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
